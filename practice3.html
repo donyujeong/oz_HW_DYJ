@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="box">마우스를 올려보세요.</p>
+
+    <script>
+        const box = document.querySelector("#box")
+        
+        function changeColor(color) {
+            box.style.color = color;
+            // console.log("색상이 변경되었습니다.")
+        };
+
+        // 이벤트 리스너를 등록할 때, 함수의 정의를 동시에 할 수 있다.
+        box.addEventListener("mouseover", () => changeColor("orange"));
+        box.addEventListener("mouseout", () => changeColor("black"));
+
+    </script>
+
+</body>
+
+</html>
+
+<!--    
+        1.
+        function changeColorToOrange(){
+            box.style.color = "orange";
+        };
+        function changeColorToBlack(){
+            box.style.color = "black";
+        };
+
+        이벤트 리스너를 등록할 때, 함수의 정의를 동시에 할 수 있다.
+        2. 
+        box.addEventListener("mouseover", function () {
+            box.style.color = "orange";
+        });
+
+        box.addEventListener("mouseout", function () {
+            box.style.color = "black";
+        });
+
+
+        3. 
+        box.addEventListener("mouseover", () => {box.style.color = "orange"});
+        box.addEventListener("mouseout", () => box.style.color = "black");
+
+        4.
+        box.addEventListener("mouseover", () => changeColor("orange"));
+        box.addEventListener("mouseout", () => changeColor("black"));
+
+
+결론
+1) ' () => {} ' -> 함수
+2) addEventListener(이벤트, 함수)
+-->
